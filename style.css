@@ -1,0 +1,24 @@
+
+body {
+    background-color: yellowgreen;
+}
+.container {
+    border: 4px black;
+    background: aqua;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px; 
+}
+div .pad {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+div .pad:hover {
+    background-color: black;
+}
