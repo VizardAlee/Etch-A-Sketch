@@ -1,45 +1,34 @@
 
 body {
-    background-color: yellowgreen;
+    background-color: rgb(211, 224, 185);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/*.grid {
-    border: 2px solid red;
-    width: 30rem;
-    height: 30rem;
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-}
-
-.grid-size {
-    margin-bottom: 0.5rem;
-    color: black;
-    font-weight: 500;
-    font-size: 1.8rem;
-}
-
-.box {
-    border: 0.5px solid black;
-}
-.box.active {
-    background-color: blue;
-}*/
 
 .output {
     display: grid;
     width: 50vw;
     height: 75vh;
     margin: 0 auto;
-    border: 1px solid salmon;
     padding: 0;
     justify-content: center;
-  
+    box-shadow: 2px 2px 5px grey;
   }
   .box {
-    /*text-align: center;*/
-    border: 1px solid grey;
+    border: 1px solid rgb(221, 218, 218);
+    background-color: #ffd;
+  }
+  .grid {
+    background-color: #ffd;
+  }
+  .box:hover {
+    background-color: rgb(54, 49, 49);
+  }
+  .active .box{
+    background-color: black;
+  }
+
+  .active {
+    background-color: black;
   }

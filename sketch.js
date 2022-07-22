@@ -1,13 +1,16 @@
 const container = document.querySelector('.grid'); //Make a variable of the container
 const output = createElement(container, 'div', '', 'output');
 const control = document.querySelectorAll('.control');
-const resetBtn = document.querySelector('.reset')
+const resetBtn = document.querySelector('.reset');
+const pen = document.querySelector('.pen');
+const eraser = document.querySelector('.eraser');
 let pixVal = 10;
 
 //BUTTON OPERATIONS SECTION
 
 control.forEach((button)=>{ //Using forEach method to gain access to the buttons
     button.addEventListener('click', (e)=>{ //event listener with the event parameter
+        reset(); //clears initial grid on the container
         pixVal = e.target.textContent; // we use target to gain access  to the button's text content
         return creatGrid(); //we return the creatGrid function to create the specified grid
     });
@@ -15,6 +18,29 @@ control.forEach((button)=>{ //Using forEach method to gain access to the buttons
 
 resetBtn.addEventListener('click', reset); //Setting up the reset button
 
+output.addEventListener('mouseover', (e) => {
+    //Add the "active" class to only divs with a "box" class
+    if (pen.value == "on" && e.target.matches('.box')) {
+        e.target.classList.add('active');
+    } else if (pen.value == "off") {
+        return;
+    }
+    if (eraser.value =="on" && e.target.matches('.active')) {
+        e.target.classList.remove('.active');
+    } else if (eraser.value =="off") {
+        return;
+    }
+});
+
+/*output.addEventListener('mouseover', (e)=>{
+    if (eraser.value =="on" && e.target.matches('.active')) {
+        e.target.classList.remove('.active');
+    } else if (eraser.value =="off") {
+        return;
+    }
+});*/
+ pen.addEventListener('click', togglePen);
+ eraser.addEventListener('click', toggleEraser);
 /*****************************/
 
 //FUNCTIONS SECTION
@@ -42,9 +68,28 @@ function reset() { //we create a function
     while (output.firstChild) { //using the while loop, we remove all content within the container'
         output.removeChild(output.lastChild)
     }
-    pixVal = 1;
-    creatGrid(); // then we replace it with single cell grid
+    pixVal = 0;
+    creatGrid(); // the clears the the container
 }
+
+function togglePen(){
+    if(pen.value=="on") {
+        pen.value="off";
+        pen.textContent = `Pen Off (Click to Turn On)`
+    } else if(pen.value=="off") {
+        pen.value="on"
+        pen.textContent=`Pen On (Click to Turn Off)`
+    }
+}
+function toggleEraser(){
+    if(eraser.value=="on") {
+        eraser.value=="off";
+    } else if(eraser.value=="off") {
+        eraser.value="on";
+    }
+}
+
+
 /********************************************/
 
 
