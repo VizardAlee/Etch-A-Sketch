@@ -1,24 +1,45 @@
 
 body {
     background-color: yellowgreen;
-}
-.container {
-    border: 4px black;
-    background: aqua;
-    margin: 0 auto;
-    width: 500px;
-    height: 500px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1px; 
+    flex-direction: column;
+    align-items: center;
 }
-div .pad {
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    margin: 0 auto;
+/*.grid {
+    border: 2px solid red;
+    width: 30rem;
+    height: 30rem;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
-div .pad:hover {
-    background-color: black;
+.grid-size {
+    margin-bottom: 0.5rem;
+    color: black;
+    font-weight: 500;
+    font-size: 1.8rem;
 }
+
+.box {
+    border: 0.5px solid black;
+}
+.box.active {
+    background-color: blue;
+}*/
+
+.output {
+    display: grid;
+    width: 50vw;
+    height: 75vh;
+    margin: 0 auto;
+    border: 1px solid salmon;
+    padding: 0;
+    justify-content: center;
+  
+  }
+  .box {
+    /*text-align: center;*/
+    border: 1px solid grey;
+  }
